@@ -1,0 +1,108 @@
+body {
+	font-family: Lato,Helvetica,Arial,sans-serif;
+	color: rgb(60, 60, 60);
+}
+
+.lineThrough {
+	text-decoration: line-through;
+	color: rgb(179, 179, 179);
+}
+
+.hide {
+	display: none;
+}
+
+.todoWrapper {
+	width: 800px;
+	margin: 0 auto;
+	background-color: #F2F2F2;
+	border-radius: 10px;
+	text-align: center;
+}
+.todoWrapper h1 {
+	margin-top: 50px;
+	padding-top: 20px;
+}
+
+
+#todoList li {
+	list-style-type: circle;
+	margin-bottom: 10px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 1.3em;
+	word-wrap: break-word;
+}
+
+.formWrapper {
+	margin: 0 auto;
+	width: 500px;
+	min-height: 500px;
+	padding: 10px;
+	text-align: left;
+}
+
+#todoText {
+	height: 42px;
+	width: 300px;
+	padding: 8px 12px;
+	font-size: 15px;
+	line-height: 1.467;
+	color: #34495e;
+	border: 2px solid #bdc3c7;
+	border-radius: 6px;
+	box-shadow: none;
+	-webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
+	transition: border .25s linear,color .25s linear,background-color .25s linear;
+}
+
+.btn {
+	padding: 10px 19px;
+	font-size: 17px;
+	line-height: 1.471;
+	border-radius: 6px;
+	color: #fff;
+	background-color: #34495e;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#submitButton {
+	background-color: #34495E;
+}
+
+#clearBtn {
+	background-color: #E74C3C;
+}
+
+.button-container {
+	margin-top: 50px;
+}
+
+.formBox {
+	display: inline-block;
+}
+
+
+
+@media screen and (max-width: 768px) {
+	.todoWrapper {
+		width: 95%;
+	}
+	.formBox {
+		display: block;
+	}
+
+	.addButtonBox {
+		margin: 10px 0 40px 0;
+	}
+
+	.formWrapper {
+		width: auto;
+	}	
+
+	#todoList li {
+		font-size: 1.1em;
+	}
+
+}

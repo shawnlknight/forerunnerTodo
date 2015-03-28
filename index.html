@@ -1,10 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>TODO</title>
-</head>
-<body>
-	<h1>Hello World!</h1>
-</body>
+<html>
+	<head>
+		<title>TODO</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script type="application/javascript" src="ForerunnerDB-master/js/dist/fdb-all.min.js"></script>
+		<script type="application/javascript" src="ForerunnerDB-master/js/dist/fdb-autobind.min.js"></script>
+		<!-- Create a DB instance and store it globally -->
+		<script type="application/javascript">
+			window.db = new ForerunnerDB();
+
+			// Ask forerunner to load any persistent data previously
+			// saved for this collection
+			db.collection('todo').load();
+		</script>
+
+		<!-- Define a todo item template -->
+		<script type="text/x-jsrender" id="todoItem">
+			<li data-link="id{:_id}"  class="todoItems">
+				<span>{^{:text}}</span>
+			</li>
+		</script>
+
+
+
+		<div class="todoWrapper">
+			<h1>TODO</h1>
+				<!-- Create our item entry form -->
+			<div class="formWrapper">
+				<form id="todoForm">
+					<div>
+						<div class="formBox inputBox">
+							<input id="todoText" type="text" placeholder="Enter todo item" />
+						</div>
+						
+						<div class="formBox addButtonBox">
+							<a href="" class="btn" id="submitButton">ADD</a>
+						</div>
+					</div>
+					
+					
+				</form>
+
+				<!-- Create an element where our todo items will be output -->
+				<ul id="todoList"></ul>
+
+				<div class="button-container">
+					<a id="clearBtn" class="hide btn">CLEAR</a>
+				</div>
+			</div>			
+		</div>
+
+
+
+
+		<!-- Finally we tell forerunner to data-bind the collection to the todo list -->
+		<script type="application/javascript">
+			db.collection('todo').link('#todoList', '#todoItem');
+		</script>
+		<script src="scripts/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
 </html>
