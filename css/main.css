@@ -101,6 +101,10 @@ body {
 		width: auto;
 	}	
 
+	#todoText {
+		width: 250px;
+	}
+
 	#todoList li {
 		font-size: 1.1em;
 	}
